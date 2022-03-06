@@ -1,4 +1,4 @@
-package tp2;
+package aluguelDeCarros;
 
 public class Cupom {
 	private int codigo;

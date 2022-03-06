@@ -1,4 +1,4 @@
-package tp2;
+package aluguelDeCarros;
 
 public class Carteira {
 	private String cartao;
