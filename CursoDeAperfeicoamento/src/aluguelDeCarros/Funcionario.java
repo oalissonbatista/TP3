@@ -10,7 +10,7 @@ public class Funcionario extends Pessoa {
 			 Double sl , int id) {
 		nome = n;
 		dataNasc = dn;
-		this.CPF = (long) CPF;
+		this.CPF = (int) CPF;
 		this.numtel = num;
 		endereco = end;
 		salario = sl;
@@ -45,11 +45,11 @@ public class Funcionario extends Pessoa {
 		this.dataNasc = dataNasc;
 	}
 
-	public Long getCPF() {
+	public int getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(Long cPF) {
+	public void setCPF(int cPF) {
 		CPF = cPF;
 	}
 
@@ -79,7 +79,7 @@ public class Funcionario extends Pessoa {
 
 	@Override
 	public String toString() {
-		return "Funcionario: " + getNome() ;
+		return "Funcionário: " + getNome() + ", Telefone: " + numtel ;
 	}
 	
 	

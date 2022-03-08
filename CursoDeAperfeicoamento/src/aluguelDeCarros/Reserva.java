@@ -11,7 +11,7 @@ public class Reserva {
 	private Funcionario funcionario;
 	private Cupom cupom;
 	private Cliente cliente;
-	private Carro carro;
+	private static Carro carro;
 	
 	public Reserva(String lr, Date hr, String ld, Date hd, double v, Cupom c, Funcionario fun, Cliente cli, Carro car) {
 		localRetirada = lr;
@@ -23,6 +23,12 @@ public class Reserva {
 		cliente = cli;
 		carro = car;
 	}
+    public static void reservar() {
+    	System.out.println("------ Carros Reservados------");
+    	System.out.println(carro);
+		
+	}
+	
 	
 	//public void reservar() 
 		//Cliente cli = this.getCliente();
@@ -87,16 +93,11 @@ public class Reserva {
 		this.carro = carro;
 	}
 
-
 	@Override
 	public String toString() {
-		return "local de retirada: " + localRetirada + ", horario de retirada: " + horarioRetirada + ", local de devolucao: "
-				+ localDevolucao + ", horario de devolucao: " + horarioDevolucao;
+		return "local de retirada: " + localRetirada + ", horario de retirada: " + horarioRetirada + "\n"+ "local de devolucao: "
+				+ localDevolucao +  ", horario de devolucao: " + horarioDevolucao;
 	}
 
-	public void reservar() {
-		// TODO Auto-generated method stub
-		
-	}
-	
+
 }

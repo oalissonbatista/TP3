@@ -35,7 +35,7 @@ public class Carteira {
 	}
 	@Override
 	public String toString() {
-		return "Pagamento via: " + tipo;
+		return "Pagamento via " + tipo;
 	}
 	
 }

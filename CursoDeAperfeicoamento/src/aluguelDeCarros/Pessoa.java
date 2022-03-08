@@ -7,7 +7,7 @@ public abstract class Pessoa {
 	protected String nome;
 	protected Long numID;
 	protected Date dataNasc;
-	protected Long CPF;
+	protected int CPF;
 	protected String endereco;
 	protected Telefone numtel;
 	
@@ -30,10 +30,10 @@ public abstract class Pessoa {
 	public void setDataNasc(Date dataNasc) {
 		this.dataNasc = dataNasc;
 	}
-	public Long getCPF() {
+	public int getCPF() {
 		return CPF;
 	}
-	public void setCPF(Long cPF) {
+	public void setCPF(int cPF) {
 		CPF = cPF;
 	}
 	public Telefone getNumtel() {

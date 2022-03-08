@@ -8,11 +8,13 @@ public class Cliente extends Pessoa {
 	protected String senha;
 	protected Carteira carteira;
 	
-	public Cliente(String n, Date dn, long CPF, Telefone num, String end, 
+	
+	//Sobrecarga
+	public Cliente(String n, Date dn, int CPF, Telefone num, String end, 
 			String e, String s, Carteira cart, long id) {
 		nome = n;
 		dataNasc = dn;
-		CPF =  (long) CPF ;
+		this.CPF = (int) CPF ;
 		numtel = num;
 		numID = (long) id;
 		endereco = end;
@@ -21,6 +23,20 @@ public class Cliente extends Pessoa {
 		carteira = cart;
 	}
 	
+	
+	public Cliente(String n, int CPF, Telefone num, String end, 
+			String e, String s, Carteira cart, long id) {
+		nome = n;
+		this.CPF = (int) CPF ;
+		numtel = num;
+		numID = (long) id;
+		endereco = end;
+		email = e;
+		senha = s;
+		carteira = cart;
+	}
+	
+
 	public Long getNumID() {
 		return numID;
 	}
@@ -45,11 +61,11 @@ public class Cliente extends Pessoa {
 		this.dataNasc = dataNasc;
 	}
 
-	public Long getCPF() {
+	public int getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(Long cPF) {
+	public void setCPF(int cPF) {
 		CPF = cPF;
 	}
 
@@ -95,7 +111,7 @@ public class Cliente extends Pessoa {
 	
 	@Override
 	public String toString() {
-		return "Cliente: " + nome + ", ID: " + numID + ", data de Nasc: " + dataNasc + ", CPF: " + CPF + ", telefone: "
-				+ numtel + ", endereço: " + endereco + ", email: " + email + ", carteira: " + carteira;
+		return "Cliente: " + nome + ", CPF: " + CPF + ", telefone: "
+				+ numtel + ", carteira: " + carteira;
 	}
 }
