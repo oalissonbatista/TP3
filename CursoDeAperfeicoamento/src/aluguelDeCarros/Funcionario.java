@@ -1,20 +1,27 @@
 package aluguelDeCarros;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Funcionario extends Pessoa {
 	
 	protected double salario; 
 	
-	public Funcionario(String n, Date dn, int CPF, Telefone num, String end, 
+	public Funcionario(String n, String dataNasc, int CPF, Telefone num, String end, 
 			 Double sl , int id) {
 		nome = n;
-		dataNasc = dn;
+		this.numID =(long) id;
+		try {
+			this.dataNasc = new SimpleDateFormat("dd/MM/yyy").parse(dataNasc);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		this.CPF = (int) CPF;
 		this.numtel = num;
 		endereco = end;
 		salario = sl;
-		this.numID =(long) id;
+		
 	}
 
 	public Funcionario(String string) {
@@ -77,9 +84,8 @@ public class Funcionario extends Pessoa {
 		this.salario = salario;
 	}
 
-	@Override
 	public String toString() {
-		return "Funcionário: " + getNome() + ", Telefone: " + numtel ;
+		return "Funcionário: " + getNome() + ", " + numtel;
 	}
 	
 	

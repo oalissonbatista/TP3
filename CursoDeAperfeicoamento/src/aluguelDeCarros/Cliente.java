@@ -1,5 +1,7 @@
 package aluguelDeCarros;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Cliente extends Pessoa {
@@ -10,10 +12,15 @@ public class Cliente extends Pessoa {
 	
 	
 	//Sobrecarga
-	public Cliente(String n, Date dn, int CPF, Telefone num, String end, 
+	public Cliente(String n, String dataNasc, int CPF, Telefone num, String end, 
 			String e, String s, Carteira cart, long id) {
 		nome = n;
-		dataNasc = dn;
+		try {
+			this.dataNasc = new SimpleDateFormat("dd/MM/yyy").parse(dataNasc);
+		} catch (ParseException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		this.CPF = (int) CPF ;
 		numtel = num;
 		numID = (long) id;
@@ -111,7 +118,7 @@ public class Cliente extends Pessoa {
 	
 	@Override
 	public String toString() {
-		return "Cliente: " + nome + ", CPF: " + CPF + ", telefone: "
+		return "Cliente: " + nome + ", CPF: " + CPF + ", "
 				+ numtel + ", carteira: " + carteira;
 	}
 }
