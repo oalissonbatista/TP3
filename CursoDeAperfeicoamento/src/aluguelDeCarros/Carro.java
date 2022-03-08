@@ -50,7 +50,6 @@ public class Carro {
 		this.valor = valor;
 	}
 
-	@Override
 	public String toString() {
 		return "Carro: " + nome + ", marca: " + marca + ", categoria: " + categoria + ", caracteristica: "
 				+ caracteristica + ", valor: R$" + valor;

@@ -8,13 +8,7 @@ public class Telefone {
 		DDD = cod;
 		numero = num;
 	}
-
 	public Telefone() {
-		
-	}
-	
-	public String toString() {
-		return "Telefone: (" + DDD + ") " + numero;
 	}
 	
 	public int getDDD() {
@@ -28,6 +22,10 @@ public class Telefone {
 	}
 	public void setNumero(int numero) {
 		this.numero = numero;
+	}
+	
+	public String toString() {
+		return "Telefone: (" + DDD + ") " + numero;
 	}
 	
 	

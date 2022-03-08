@@ -22,7 +22,6 @@ public class Cupom {
 		this.desconto = desconto;
 	}
 
-	@Override
 	public String toString() {
 		return "Cupom: " + codigo + ", desconto: " + desconto;
 	}

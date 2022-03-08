@@ -1,7 +1,7 @@
 package aluguelDeCarros;
 
 public class Carteira {
-	private String tipo;
+	private String tipoPagamento;
 	private String cartao;
 	private String valePresente;
 	private String pix;
@@ -9,11 +9,10 @@ public class Carteira {
 		cartao = c;
 		valePresente = vP;
 		pix = p;
-		tipo = t;
+		tipoPagamento = t;
 		
 	}
 	public Carteira(String string) {
-		// TODO Auto-generated constructor stub
 	}
 	public String getCartao() {
 		return cartao;
@@ -33,9 +32,8 @@ public class Carteira {
 	public void setPix(String pix) {
 		this.pix = pix;
 	}
-	@Override
 	public String toString() {
-		return "Pagamento via " + tipo;
+		return "Pagamento via " + tipoPagamento;
 	}
 	
 }
