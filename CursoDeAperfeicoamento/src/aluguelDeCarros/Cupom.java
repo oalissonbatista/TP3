@@ -1,25 +1,31 @@
 package aluguelDeCarros;
 
 public class Cupom {
-	private int codigo;
-	private int desconto;
+	private String codigo;
+	private String desconto;
 	
-	public Cupom(int c, int d) {
-		codigo = d;
+	public Cupom(String c, String d) {
+		codigo = c;
 		desconto = d;
 	}
 	
-	public int getCodigo() {
+	public String getCodigo() {
 		return codigo;
 	}
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
+	public void setCodigo(String string) {
+		this.codigo = string;
 	}
-	public int getDesconto() {
+	public String getDesconto() {
 		return desconto;
 	}
-	public void setDesconto(int desconto) {
+	public void setDesconto(String desconto) {
 		this.desconto = desconto;
 	}
+
+	@Override
+	public String toString() {
+		return "Cupom: " + codigo + ", desconto: " + desconto;
+	}
+	
 
 }

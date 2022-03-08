@@ -2,25 +2,23 @@ package aluguelDeCarros;
 
 import java.util.Date;
 
-public class Funcionario {
+public class Funcionario extends Pessoa {
 	
-	protected String nome;
-	protected int numID;
-	protected Date dataNasc;
-	protected int CPF;
-	protected Telefone numtel;
-	protected String endereco;
 	protected double salario; 
 	
 	public Funcionario(String n, Date dn, int CPF, Telefone num, String end, 
-			String e, String s, Double sl , int id) {
+			 Double sl , int id) {
 		nome = n;
 		dataNasc = dn;
-		this.CPF = CPF;
+		this.CPF = (long) CPF;
 		this.numtel = num;
-		this.numID =id;
 		endereco = end;
 		salario = sl;
+		this.numID =(long) id;
+	}
+
+	public Funcionario(String string) {
+		// TODO Auto-generated constructor stub
 	}
 
 	public String getNome() {
@@ -31,11 +29,11 @@ public class Funcionario {
 		this.nome = nome;
 	}
 
-	public int getNumID() {
+	public Long getNumID() {
 		return numID;
 	}
 
-	public void setNumID(int numID) {
+	public void setNumID(Long numID) {
 		this.numID = numID;
 	}
 
@@ -47,11 +45,11 @@ public class Funcionario {
 		this.dataNasc = dataNasc;
 	}
 
-	public int getCPF() {
+	public Long getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(int cPF) {
+	public void setCPF(Long cPF) {
 		CPF = cPF;
 	}
 
@@ -77,6 +75,11 @@ public class Funcionario {
 
 	public void setSalario(double salario) {
 		this.salario = salario;
+	}
+
+	@Override
+	public String toString() {
+		return "Funcionario: " + getNome() ;
 	}
 	
 	

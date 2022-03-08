@@ -1,5 +1,6 @@
 package aluguelDeCarros;
 
+import java.util.Arrays;
 import java.util.Date;
 
 public class Reserva {
@@ -10,11 +11,9 @@ public class Reserva {
 	private Funcionario funcionario;
 	private Cupom cupom;
 	private Cliente cliente;
-	private Carro[] carrosCadastrados = new Carro[20];
-	private int numCarrosCadastrados = 0;
+	private Carro carro;
 	
-	
-	public Reserva(String lr, Date hr, String ld, Date hd, double v, String cupom, Funcionario fun, String c, Cliente cli) {
+	public Reserva(String lr, Date hr, String ld, Date hd, double v, Cupom c, Funcionario fun, Cliente cli, Carro car) {
 		localRetirada = lr;
 		horarioRetirada = hr;
 		localDevolucao = ld;
@@ -22,9 +21,14 @@ public class Reserva {
 		funcionario = fun;
 		cupom = c;
 		cliente = cli;
+		carro = car;
 	}
 	
-	
+	//public void reservar() 
+		//Cliente cli = this.getCliente();
+		//Carro car = this.getCarro();
+		
+		
 	public Cliente getCliente() {
 		return cliente;
 	}
@@ -51,14 +55,6 @@ public class Reserva {
 		this.cupom = cupom;
 	}
 
-	public int getNumCarrosCadastrados() {
-		return numCarrosCadastrados;
-	}
-
-	public void setNumCarrosCadastrados(int numCarrosCadastrados) {
-		this.numCarrosCadastrados = numCarrosCadastrados;
-	}
-
 	public String getLocalRetirada() {
 		return localRetirada;
 	}
@@ -83,11 +79,24 @@ public class Reserva {
 	public void setHorarioDevolucao(Date horarioDevolucao) {
 		this.horarioDevolucao = horarioDevolucao;
 	}
-	public Carro[] getCarrosCadastrados() {
-		return carrosCadastrados;
+	public Carro getCarro() {
+		return carro;
 	}
-	public void setCarrosCadastrados(Carro[] carrosCadastrados) {
-		this.carrosCadastrados = carrosCadastrados;
+
+	public void setCarro(Carro carro) {
+		this.carro = carro;
+	}
+
+
+	@Override
+	public String toString() {
+		return "local de retirada: " + localRetirada + ", horario de retirada: " + horarioRetirada + ", local de devolucao: "
+				+ localDevolucao + ", horario de devolucao: " + horarioDevolucao;
+	}
+
+	public void reservar() {
+		// TODO Auto-generated method stub
+		
 	}
 	
 }

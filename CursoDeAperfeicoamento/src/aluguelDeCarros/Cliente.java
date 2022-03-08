@@ -2,37 +2,30 @@ package aluguelDeCarros;
 
 import java.util.Date;
 
-public class Cliente {
-	
-	protected String nome;
-	protected int numID;
-	protected Date dataNasc;
-	protected int CPF;
-	protected Telefone numtel;
-	protected String endereco;
+public class Cliente extends Pessoa {
+
 	protected String email;
 	protected String senha;
 	protected Carteira carteira;
 	
-	
-	public Cliente(String n, Date dn, int CPF, Telefone num, String end, 
-			String e, String s, Carteira cart, int id) {
+	public Cliente(String n, Date dn, long CPF, Telefone num, String end, 
+			String e, String s, Carteira cart, long id) {
 		nome = n;
 		dataNasc = dn;
-		this.CPF = CPF;
-		this.numtel = num;
-		this.numID =id;
+		CPF =  (long) CPF ;
+		numtel = num;
+		numID = (long) id;
 		endereco = end;
 		email = e;
 		senha = s;
 		carteira = cart;
 	}
-
-	public int getNumID() {
+	
+	public Long getNumID() {
 		return numID;
 	}
 
-	public void setNumID(int numID) {
+	public void setNumID(Long numID) {
 		this.numID = numID;
 	}
 
@@ -52,11 +45,11 @@ public class Cliente {
 		this.dataNasc = dataNasc;
 	}
 
-	public int getCPF() {
+	public Long getCPF() {
 		return CPF;
 	}
 
-	public void setCPF(int cPF) {
+	public void setCPF(Long cPF) {
 		CPF = cPF;
 	}
 
@@ -100,5 +93,9 @@ public class Cliente {
 		this.carteira = carteira;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Cliente: " + nome + ", ID: " + numID + ", data de Nasc: " + dataNasc + ", CPF: " + CPF + ", telefone: "
+				+ numtel + ", endereço: " + endereco + ", email: " + email + ", carteira: " + carteira;
+	}
 }
